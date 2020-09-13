@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/contacts', [ContactController::class, 'index']);
 Route::get('/contacts/create', [ContactController::class, 'create'])->name('contact_register');
 Route::post('/contacts', [ContactController::class, 'store'])->name('contact_store');
+Route::get('/contacts/{contact}', [ContactController::class, 'show']);
+Route::get('/contacts/{contact}', [ContactController::class, 'edit'])->name('contact_edit');
+Route::patch('/contacts/{contact}}', [ContactController::class, 'update'])->name('contact_update');
+Route::delete('/contacts/{contact}', [ContactController::class, 'destroy'])->name('contact_destroy');
